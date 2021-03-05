@@ -7,6 +7,16 @@ app.get("/", (req, res) => {
 	res.sendFile(__dirname + "/index.html");
 });
 
+app.get("/focusing", (req, res) => {
+	res.send("you are focusing");
+	io.emit("chat message", "focusing");
+});
+
+app.get("/notfocusing", (req, res) => {
+	res.send("you are not focusing");
+	io.emit("chat message", "not focusing");
+});
+
 io.on("connection", socket => {
 	socket.on("chat message", msg => {
 		io.emit("chat message", msg);
