@@ -1,0 +1,14 @@
+{
+	"name": "tilganga",
+	"description": "tilganga based on socket.io app",
+	"website": "https://github.com/rushilshakya/tilganga",
+	"repository": "https://github.com/rushilshakya/tilganga",
+	"logo": "https://node-js-sample.herokuapp.com/node.svg",
+	"success_url": "/",
+	"keywords": ["node", "express", "socket.io", "realtime", "websocket", "tilganga"],
+	"scripts": {},
+	"addons": [],
+	"env": {
+		"BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-nodejs"
+	}
+}
