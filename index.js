@@ -1,6 +1,6 @@
 const app = require("express")();
 const http = require("http").Server(app);
-const cors = require("cors");
+//const cors = require("cors");
 const io = require("socket.io")(http, {
 	cors: {
 		origin: "http://localhost:3000",
@@ -8,8 +8,6 @@ const io = require("socket.io")(http, {
 	},
 });
 const port = process.env.PORT || 3000;
-
-app.use(cors());
 
 app.get("/", (req, res) => {
 	res.sendFile(__dirname + "/index.html");
@@ -23,12 +21,6 @@ app.get("/focusing", (req, res) => {
 app.get("/notfocusing", (req, res) => {
 	res.send("you are not focusing");
 	io.emit("chat message", "not focusing");
-});
-
-io.on("connection", socket => {
-	socket.on("chat message", msg => {
-		io.emit("chat message", msg);
-	});
 });
 
 http.listen(port, () => {
