@@ -3,7 +3,7 @@ const http = require("http").Server(app);
 //const io = require("socket.io")(http);
 const io = require("socket.io")(http, {
 	cors: {
-		origins: ["http://localhost:3000", "http://localhost"],
+		origins: ["http://localhost:3000", "http://localhost","http://www.blindsighttrainer.com/trainer_alpha.html?id=Sujay2"],
 		methods: ["GET", "POST"],
 	},
 });
